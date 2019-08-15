@@ -19,8 +19,9 @@ export const reducer = (state = initialState, action) => {
       };
     case FETCH_WEATHER_DATA_SUCCESS:
       return {
+        ...state,
         isLoading: false,
-        weather: action.payload,
+        weather: [action.payload],
         error: ""
       };
     default:
